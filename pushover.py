@@ -1,5 +1,5 @@
 """
-PushOverPy is a project to simply the usage of Pushover.net's services.
+PushOverPy is a project to simplify the usage of Pushover.net's services.
 
 While there are already a few projects in PyPi for this, this doesn't enforce using third-party libraries.
 
