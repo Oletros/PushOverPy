@@ -4,9 +4,9 @@ PushOverPy is a project to simplify the usage of Pushover.net's services.
 While there are already a few projects in PyPi for this, this doesn't enforce using third-party libraries.
 
 The API of Pushover is very simplistic, which aides in the development of such projects.  Also, no
-scripts on PyPi currently support byeond the required fields, which is not always a good thing.
+scripts on PyPi currently support messages beyond the required fields, which is not always a good thing.
 
-Why not support redis-py if possible?  Because it's handy and is actually quite beneficial.
+Why not support redis-py if possible?  It's handy and is actually quite beneficial.
 """
 import httplib, urllib
 
