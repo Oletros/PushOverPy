@@ -80,13 +80,27 @@ class PushOver(object):
         if device:
             self.body['device'] = device
             
+        # The message can only be 512 characters (title + message).  If this combined is over, adjust the blocksize.
         if title:
-            self.body['title'] = title
+            header = len(title) + len(msg)
             
+            if (header > 512):
+                blocksize -= header
+                
+            self.body['title'] = title
+        
+        # URLs are limited to 500 characters
         if url:
+            if len(url) > 500:
+                url = url[:500]
+                
             self.body['url'] = url
         
+        # URL titles are restricted to 50 characters
         if url_title:
+            if len(url_title) > 50:
+                url_title = url_title[:50]
+                
             self.body['url_title'] = url_title
         
         if priority != 0:
