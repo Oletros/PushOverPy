@@ -38,9 +38,10 @@ class PushOver(object):
                 except:
                     print "Unable to connect to Redis.  Ensure the redis server is installed on %s:%d" % (redis['host'], redis['port'])
             except:
+                import sys
                 print "Redis is not available.  Please provide a token and key."
-                return
-        
+                sys.exit(1)
+                
         self.token = token
         self.key = key
                 
