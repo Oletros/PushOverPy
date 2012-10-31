@@ -25,14 +25,14 @@ class PushOver(object):
             else:
                 break
             
-    def __init__(self, token="", key="", redis={'host' : 'localhost', 'port' : 6379}):
+    def __init__(self, token="", key="", redis=('localhost', 6379)):
         if not token and not key:
             try:
                 import redis
                 
                 try:
                     self.redis = redis
-                    self.storage = redis.StrictRedis(host=redis['host'], port=redis['port'])
+                    self.storage = redis.StrictRedis(host=redis[0], port=redis[1])
                     token = self.storage.get('token')
                     key = self.storage.get('key')
                 except:
